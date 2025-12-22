@@ -165,22 +165,22 @@ local function get_colors()
       punctuation = p.light4,
 
       -- Everything else uses normal text color (light1)
-      red = p.light1,
-      green = p.light1,
-      yellow = p.light1,
-      blue = p.light1,
-      purple = p.light1,
-      aqua = p.light1,
-      orange = p.light1,
-      neutral_red = p.light1,
-      neutral_green = p.light1,
-      neutral_yellow = p.light1,
-      neutral_blue = p.light1,
-      neutral_purple = p.light1,
-      neutral_aqua = p.light1,
-      dark_red = p.light1,
-      dark_green = p.light1,
-      dark_aqua = p.light1,
+      red = p.bright_red,
+      green = p.bright_green,
+      yellow = p.bright_yellow,
+      blue = p.bright_blue,
+      purple = p.bright_purple,
+      aqua = p.bright_aqua,
+      orange = p.bright_orange,
+      neutral_red = p.neutral_red,
+      neutral_green = p.neutral_green,
+      neutral_yellow = p.neutral_yellow,
+      neutral_blue = p.neutral_blue,
+      neutral_purple = p.neutral_purple,
+      neutral_aqua = p.neutral_aqua,
+      dark_red = p.dark_red,
+      dark_green = p.dark_green,
+      dark_aqua = p.dark_aqua,
       gray = p.gray,
     },
     light = {
@@ -207,23 +207,22 @@ local function get_colors()
       -- 5. Punctuation → use dark4 for subtle punctuation in light mode
       punctuation = p.dark4,
 
-      -- Everything else uses normal text color (dark1)
-      red = p.dark1,
-      green = p.dark1,
-      yellow = p.dark1,
-      blue = p.dark1,
-      purple = p.dark1,
-      aqua = p.dark1,
-      orange = p.dark1,
-      neutral_red = p.dark1,
-      neutral_green = p.dark1,
-      neutral_yellow = p.dark1,
-      neutral_blue = p.dark1,
-      neutral_purple = p.dark1,
-      neutral_aqua = p.dark1,
-      dark_red = p.dark1,
-      dark_green = p.dark1,
-      dark_aqua = p.dark1,
+      red = p.faded_red,
+      green = p.faded_green,
+      yellow = p.faded_yellow,
+      blue = p.faded_blue,
+      purple = p.faded_purple,
+      aqua = p.faded_aqua,
+      orange = p.faded_orange,
+      neutral_red = p.neutral_red,
+      neutral_green = p.neutral_green,
+      neutral_yellow = p.neutral_yellow,
+      neutral_blue = p.neutral_blue,
+      neutral_purple = p.neutral_purple,
+      neutral_aqua = p.neutral_aqua,
+      dark_red = p.light_red,
+      dark_green = p.light_green,
+      dark_aqua = p.light_aqua,
       gray = p.gray,
     },
   }
@@ -261,13 +260,57 @@ local function get_groups()
   end
 
   local groups = {
-    -- Basic UI elements (use Gruvbox colors but no highlighting)
+    -- Gruvbox color groups for UI components
+    GruvboxFg0                       = { fg = colors.fg0 },
+    GruvboxFg1                       = { fg = colors.fg1 },
+    GruvboxFg2                       = { fg = colors.fg2 },
+    GruvboxFg3                       = { fg = colors.fg3 },
+    GruvboxFg4                       = { fg = colors.fg4 },
+    GruvboxGray                      = { fg = colors.gray },
+    GruvboxBg0                       = { fg = colors.bg0 },
+    GruvboxBg1                       = { fg = colors.bg1 },
+    GruvboxBg2                       = { fg = colors.bg2 },
+    GruvboxBg3                       = { fg = colors.bg3 },
+    GruvboxBg4                       = { fg = colors.bg4 },
+    GruvboxRed                       = { fg = colors.red },
+    GruvboxRedBold                   = { fg = colors.red, bold = config.bold },
+    GruvboxGreen                     = { fg = colors.green },
+    GruvboxGreenBold                 = { fg = colors.green, bold = config.bold },
+    GruvboxYellow                    = { fg = colors.yellow },
+    GruvboxYellowBold                = { fg = colors.yellow, bold = config.bold },
+    GruvboxBlue                      = { fg = colors.blue },
+    GruvboxBlueBold                  = { fg = colors.blue, bold = config.bold },
+    GruvboxPurple                    = { fg = colors.purple },
+    GruvboxPurpleBold                = { fg = colors.purple, bold = config.bold },
+    GruvboxAqua                      = { fg = colors.aqua },
+    GruvboxAquaBold                  = { fg = colors.aqua, bold = config.bold },
+    GruvboxOrange                    = { fg = colors.orange },
+    GruvboxOrangeBold                = { fg = colors.orange, bold = config.bold },
+    -- Basic UI elements
     Normal                           = config.transparent_mode and { fg = colors.fg1, bg = nil } or
         { fg = colors.fg1, bg = colors.bg0 },
     NormalFloat                      = config.transparent_mode and { fg = colors.fg1, bg = nil } or
         { fg = colors.fg1, bg = colors.bg1 },
     NormalNC                         = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or
         { link = "Normal" },
+
+    -- Gruvbox-style UI elements
+    ColorColumn                      = { bg = colors.bg1 },
+    Conceal                          = { fg = colors.blue },
+    NonText                          = { link = "GruvboxBg2" },
+    SpecialKey                       = { link = "GruvboxFg4" },
+    Directory                        = { link = "GruvboxGreen" },
+    Title                            = { link = "GruvboxGreen" },
+    ErrorMsg                         = { fg = colors.bg0, bg = colors.red },
+    MoreMsg                          = { link = "GruvboxYellow" },
+    ModeMsg                          = { link = "GruvboxYellow" },
+    Question                         = { link = "GruvboxOrange" },
+    WarningMsg                       = { link = "GruvboxRed" },
+    Whitespace                       = { fg = colors.bg2 },
+    EndOfBuffer                      = { link = "NonText" },
+    Folded                           = { fg = colors.gray, bg = colors.bg1 },
+    FoldColumn                       = config.transparent_mode and { fg = colors.gray, bg = nil } or
+        { fg = colors.gray, bg = colors.bg1 },
 
     -- Alabaster's 4 categories using Gruvbox colors:
     -- 1. Strings
@@ -310,21 +353,20 @@ local function get_groups()
     -- UI elements (keep Gruvbox's but simpler)
     CursorLine                       = { bg = colors.bg1 },
     CursorColumn                     = { link = "CursorLine" },
-    ColorColumn                      = { bg = colors.bg1 },
     LineNr                           = { fg = colors.fg4 },
     CursorLineNr                     = { fg = colors.fg3, bg = colors.bg1 },
     SignColumn                       = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
 
-    -- Visual selection and search (subtle)
-    Visual                           = { bg = colors.bg3 },
+    -- Visual selection and search (Gruvbox style but minimal)
+    Visual                           = { bg = colors.bg3, reverse = config.inverse },
     VisualNOS                        = { link = "Visual" },
-    Search                           = { bg = colors.bg2 },
-    IncSearch                        = { link = "Search" },
-    CurSearch                        = { link = "Search" },
+    Search                           = { fg = colors.yellow, bg = colors.bg0, reverse = config.inverse },
+    IncSearch                        = { fg = colors.orange, bg = colors.bg0, reverse = config.inverse },
+    CurSearch                        = { link = "IncSearch" },
 
-    -- Pmenu
+    -- Pmenu (Gruvbox colors)
     Pmenu                            = { fg = colors.fg1, bg = colors.bg2 },
-    PmenuSel                         = { fg = colors.bg2, bg = colors.fg1 },
+    PmenuSel                         = { fg = colors.bg2, bg = colors.blue },
     PmenuSbar                        = { bg = colors.bg2 },
     PmenuThumb                       = { bg = colors.bg4 },
 
@@ -336,27 +378,44 @@ local function get_groups()
     WinSeparator                     = config.transparent_mode and { fg = colors.bg3, bg = nil } or
         { fg = colors.bg3, bg = colors.bg0 },
 
-    -- Diff (subtle)
+    -- MiniStatusline theming (add to get_groups() function)
+    MiniStatuslineDevinfo            = { link = "StatusLine" },
+    MiniStatuslineFileinfo           = { link = "StatusLine" },
+    MiniStatuslineFilename           = { link = "StatusLineNC" },
+    MiniStatuslineInactive           = { link = "StatusLineNC" },
+
+    -- Mode-specific statusline segments
+    MiniStatuslineModeCommand        = { fg = colors.bg0, bg = colors.yellow },
+    MiniStatuslineModeInsert         = { fg = colors.bg0, bg = colors.blue },
+    MiniStatuslineModeNormal         = { fg = colors.bg0, bg = colors.fg1 },
+    MiniStatuslineModeOther          = { fg = colors.bg0, bg = colors.aqua },
+    MiniStatuslineModeReplace        = { fg = colors.bg0, bg = colors.red },
+    MiniStatuslineModeVisual         = { fg = colors.bg0, bg = colors.green },
+    MiniStatuslineModeSelect         = { fg = colors.bg0, bg = colors.purple },
+    MiniStatuslineModeTerminal       = { fg = colors.bg0, bg = colors.orange },
+
+    -- Diff (Gruvbox colors)
     DiffAdd                          = { bg = colors.dark_green },
     DiffDelete                       = { bg = colors.dark_red },
     DiffChange                       = { bg = colors.dark_aqua },
-    DiffText                         = { bg = colors.bg2 },
+    DiffText                         = { bg = colors.yellow, fg = colors.bg0 },
 
-    -- Diagnostics (minimal)
-    DiagnosticError                  = { fg = colors.fg1 },
-    DiagnosticWarn                   = { fg = colors.fg1 },
-    DiagnosticInfo                   = { fg = colors.fg1 },
-    DiagnosticHint                   = { fg = colors.fg1 },
+    -- Diagnostics (Gruvbox colors)
+    DiagnosticError                  = { link = "GruvboxRed" },
+    DiagnosticWarn                   = { link = "GruvboxYellow" },
+    DiagnosticInfo                   = { link = "GruvboxBlue" },
+    DiagnosticHint                   = { link = "GruvboxAqua" },
+    DiagnosticOk                     = { link = "GruvboxGreen" },
+    DiagnosticSignError              = { fg = colors.red, bg = colors.bg1 },
+    DiagnosticSignWarn               = { fg = colors.yellow, bg = colors.bg1 },
+    DiagnosticSignInfo               = { fg = colors.blue, bg = colors.bg1 },
+    DiagnosticSignHint               = { fg = colors.aqua, bg = colors.bg1 },
     DiagnosticUnnecessary            = { fg = colors.punctuation },
-    DiagnosticSignError              = { fg = colors.fg1, bg = colors.bg1 },
-    DiagnosticSignWarn               = { fg = colors.fg1, bg = colors.bg1 },
-    DiagnosticSignInfo               = { fg = colors.fg1, bg = colors.bg1 },
-    DiagnosticSignHint               = { fg = colors.fg1, bg = colors.bg1 },
 
-    -- Git (minimal)
-    GitSignsAdd                      = { fg = colors.fg1 },
-    GitSignsChange                   = { fg = colors.fg1 },
-    GitSignsDelete                   = { fg = colors.fg1 },
+    -- Git (Gruvbox colors)
+    GitSignsAdd                      = { link = "GruvboxGreen" },
+    GitSignsChange                   = { link = "GruvboxOrange" },
+    GitSignsDelete                   = { link = "GruvboxRed" },
 
     -- Clojure
     clojureKeyword                   = { fg = colors.constant },   -- Constants (purple)
