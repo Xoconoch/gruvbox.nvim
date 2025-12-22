@@ -347,6 +347,7 @@ local function get_groups()
     DiagnosticWarn                   = { fg = colors.fg1 },
     DiagnosticInfo                   = { fg = colors.fg1 },
     DiagnosticHint                   = { fg = colors.fg1 },
+    DiagnosticUnnecessary            = { fg = colors.punctuation },
     DiagnosticSignError              = { fg = colors.fg1, bg = colors.bg1 },
     DiagnosticSignWarn               = { fg = colors.fg1, bg = colors.bg1 },
     DiagnosticSignInfo               = { fg = colors.fg1, bg = colors.bg1 },
@@ -504,6 +505,7 @@ local function get_groups()
     nixAttributeSet                  = { fg = colors.punctuation }, -- braces
     nixAttributeDefinition           = { fg = colors.punctuation }, -- attribute name
     nixAttributeAssignment           = { fg = colors.punctuation }, -- "=" neutral
+    nixFunctionArgument              = { fg = colors.punctuation }, -- { pkgs, ... } stuff
 
     -- CoffeeScript
     coffeeExtendedOp                 = { fg = colors.punctuation }, -- Punctuation
