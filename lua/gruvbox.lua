@@ -280,7 +280,7 @@ local function get_groups()
 
     -- 4. Global definitions (functions, classes, etc.)
     Function = { fg = colors.definition },
-    Identifier = { fg = colors.definition },
+    Identifier = { fg = colors.fg1 },
 
     -- Neutralize all language keywords (if, else, function, etc.)
     Statement = { fg = colors.fg1 },
