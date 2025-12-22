@@ -501,6 +501,9 @@ local function get_groups()
     nixArrow                         = { fg = colors.punctuation }, -- `->`
     nixLambda                        = { fg = colors.fg1 },         -- Neutral for anonymous function arrow
     nixUri                           = { fg = colors.string },      -- URIs treated like strings
+    nixAttributeSet                  = { fg = colors.punctuation }, -- braces
+    nixAttributeDefinition           = { fg = colors.fg1 },         -- attribute name
+    nixAttributeAssignment           = { fg = colors.punctuation }, -- "=" neutral
 
     -- CoffeeScript
     coffeeExtendedOp                 = { fg = colors.punctuation }, -- Punctuation
