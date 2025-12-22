@@ -374,7 +374,7 @@ local function get_groups()
     ["@function.macro"] = { link = "Function" },
     ["@method"] = { link = "Function" },
     ["@method.call"] = { link = "Function" },
-    ["@constructor"] = { fg = colors.fg1 },
+    ["@constructor"] = { fg = colors.punctuation },
 
     -- Neutralize all other tree-sitter groups
     ["@keyword"] = { fg = colors.fg1 },
@@ -414,7 +414,7 @@ local function get_groups()
     ["@tag"] = { fg = colors.fg1 },
     ["@tag.attribute"] = { fg = colors.fg1 },
     ["@tag.delimiter"] = { fg = colors.fg1 },
-    ["@punctuation"] = { fg = colors.fg1 },
+    ["@punctuation"] = { fg = colors.punctuation },
     ["@macro"] = { fg = colors.fg1 },
     ["@structure"] = { fg = colors.fg1 },
   }
