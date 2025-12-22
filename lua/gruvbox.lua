@@ -161,8 +161,8 @@ local function get_colors()
       comment = p.neutral_orange,
       -- 4. Global definitions → Gruvbox blue
       definition = p.bright_blue,
-      -- 5. Punctuation → use dark3 for subtle punctuation in dark mode
-      punctuation = p.dark3,
+      -- 5. Punctuation → use light4 for subtle punctuation in dark mode
+      punctuation = p.light4,
 
       -- Everything else uses normal text color (light1)
       red = p.light1,
@@ -204,8 +204,8 @@ local function get_colors()
       comment = p.faded_orange,
       -- 4. Global definitions → faded blue
       definition = p.faded_blue,
-      -- 5. Punctuation → use light3 for subtle punctuation in light mode
-      punctuation = p.light3,
+      -- 5. Punctuation → use dark4 for subtle punctuation in light mode
+      punctuation = p.dark4,
 
       -- Everything else uses normal text color (dark1)
       red = p.dark1,
@@ -353,6 +353,296 @@ local function get_groups()
     GitSignsChange = { fg = colors.fg1 },
     GitSignsDelete = { fg = colors.fg1 },
 
+    -- Clojure
+    clojureKeyword = { fg = colors.constant },      -- Constants (purple)
+    clojureCond = { fg = colors.fg1 },              -- Neutral
+    clojureSpecial = { fg = colors.fg1 },           -- Neutral
+    clojureDefine = { fg = colors.fg1 },            -- Neutral
+    clojureFunc = { fg = colors.definition },       -- Functions (blue)
+    clojureRepeat = { fg = colors.fg1 },            -- Neutral
+    clojureCharacter = { fg = colors.string },      -- Strings (green)
+    clojureStringEscape = { fg = colors.constant }, -- Constants (purple)
+    clojureException = { fg = colors.fg1 },         -- Neutral
+    clojureRegexp = { fg = colors.string },         -- Strings (green)
+    clojureRegexpEscape = { fg = colors.constant }, -- Constants (purple)
+    clojureRegexpCharClass = { fg = colors.fg1 },   -- Neutral
+    clojureRegexpMod = { link = "clojureRegexpCharClass" },
+    clojureRegexpQuantifier = { link = "clojureRegexpCharClass" },
+    clojureParen = { fg = colors.punctuation }, -- Punctuation
+    clojureAnonArg = { fg = colors.fg1 },       -- Neutral
+    clojureVariable = { fg = colors.fg1 },      -- Neutral
+    clojureMacro = { fg = colors.definition },  -- Functions (blue)
+    clojureMeta = { fg = colors.fg1 },          -- Neutral
+    clojureDeref = { fg = colors.fg1 },         -- Neutral
+    clojureQuote = { fg = colors.fg1 },         -- Neutral
+    clojureUnquote = { fg = colors.fg1 },       -- Neutral
+
+    -- C/C++
+    cOperator = { fg = colors.constant },   -- Constants (purple)
+    cppOperator = { fg = colors.constant }, -- Constants (purple)
+    cStructure = { fg = colors.fg1 },       -- Neutral
+
+    -- Python
+    pythonBuiltin = { fg = colors.definition },     -- Functions (blue)
+    pythonBuiltinObj = { fg = colors.definition },  -- Functions (blue)
+    pythonBuiltinFunc = { fg = colors.definition }, -- Functions (blue)
+    pythonFunction = { fg = colors.definition },    -- Functions (blue)
+    pythonDecorator = { fg = colors.definition },   -- Functions (blue)
+    pythonInclude = { fg = colors.fg1 },            -- Neutral
+    pythonImport = { fg = colors.fg1 },             -- Neutral
+    pythonRun = { fg = colors.fg1 },                -- Neutral
+    pythonCoding = { fg = colors.fg1 },             -- Neutral
+    pythonOperator = { fg = colors.fg1 },           -- Neutral
+    pythonException = { fg = colors.fg1 },          -- Neutral
+    pythonExceptions = { fg = colors.constant },    -- Constants (purple)
+    pythonBoolean = { fg = colors.constant },       -- Constants (purple)
+    pythonDot = { fg = colors.punctuation },        -- Punctuation
+    pythonConditional = { fg = colors.fg1 },        -- Neutral
+    pythonRepeat = { fg = colors.fg1 },             -- Neutral
+    pythonDottedName = { fg = colors.definition },  -- Functions (blue)
+
+    -- CSS
+    cssBraces = { fg = colors.punctuation },      -- Punctuation
+    cssFunctionName = { fg = colors.definition }, -- Functions (blue)
+    cssIdentifier = { fg = colors.fg1 },          -- Neutral
+    cssClassName = { fg = colors.definition },    -- Functions (blue)
+    cssColor = { fg = colors.constant },          -- Constants (purple)
+    cssSelectorOp = { fg = colors.punctuation },  -- Punctuation
+    cssSelectorOp2 = { fg = colors.punctuation }, -- Punctuation
+    cssImportant = { fg = colors.constant },      -- Constants (purple)
+    cssVendor = { fg = colors.fg1 },              -- Neutral
+    -- CSS properties - most should be neutral, but function-like ones blue
+    cssTextProp = { fg = colors.fg1 },
+    cssAnimationProp = { fg = colors.fg1 },
+    cssUIProp = { fg = colors.fg1 },
+    cssTransformProp = { fg = colors.definition }, -- Functions (blue)
+    cssTransitionProp = { fg = colors.fg1 },
+    cssPrintProp = { fg = colors.fg1 },
+    cssPositioningProp = { fg = colors.fg1 },
+    cssBoxProp = { fg = colors.fg1 },
+    cssFontDescriptorProp = { fg = colors.fg1 },
+    cssFlexibleBoxProp = { fg = colors.fg1 },
+    cssBorderOutlineProp = { fg = colors.fg1 },
+    cssBackgroundProp = { fg = colors.fg1 },
+    cssMarginProp = { fg = colors.fg1 },
+    cssListProp = { fg = colors.fg1 },
+    cssTableProp = { fg = colors.fg1 },
+    cssFontProp = { fg = colors.fg1 },
+    cssPaddingProp = { fg = colors.fg1 },
+    cssDimensionProp = { fg = colors.fg1 },
+    cssRenderProp = { fg = colors.fg1 },
+    cssColorProp = { fg = colors.fg1 },
+    cssGeneratedContentProp = { fg = colors.fg1 },
+
+    -- JavaScript/TypeScript
+    javaScriptBraces = { fg = colors.punctuation },     -- Punctuation
+    javaScriptFunction = { fg = colors.definition },    -- Functions (blue)
+    javaScriptIdentifier = { fg = colors.fg1 },         -- Neutral
+    javaScriptMember = { fg = colors.fg1 },             -- Neutral
+    javaScriptNumber = { fg = colors.constant },        -- Constants (purple)
+    javaScriptNull = { fg = colors.constant },          -- Constants (purple)
+    javaScriptParens = { fg = colors.punctuation },     -- Punctuation
+
+    typescriptReserved = { fg = colors.fg1 },           -- Neutral
+    typescriptLabel = { fg = colors.fg1 },              -- Neutral
+    typescriptFuncKeyword = { fg = colors.definition }, -- Functions (blue)
+    typescriptIdentifier = { fg = colors.fg1 },         -- Neutral
+    typescriptBraces = { fg = colors.punctuation },     -- Punctuation
+    typescriptEndColons = { fg = colors.punctuation },  -- Punctuation
+    typescriptDOMObjects = { fg = colors.fg1 },         -- Neutral
+    typescriptAjaxMethods = { fg = colors.definition }, -- Functions (blue)
+    typescriptLogicSymbols = { fg = colors.fg1 },       -- Neutral
+    typescriptDocSeeTag = { link = "Comment" },
+    typescriptDocParam = { link = "Comment" },
+    typescriptDocTags = { link = "Comment" },
+    typescriptGlobalObjects = { fg = colors.definition },           -- Functions (blue)
+    typescriptParens = { fg = colors.punctuation },                 -- Punctuation
+    typescriptOpSymbols = { fg = colors.punctuation },              -- Punctuation
+    typescriptHtmlElemProperties = { fg = colors.fg1 },             -- Neutral
+    typescriptNull = { fg = colors.constant },                      -- Constants (purple)
+    typescriptInterpolationDelimiter = { fg = colors.punctuation }, -- Punctuation
+
+    -- PureScript
+    purescriptModuleKeyword = { fg = colors.fg1 },     -- Neutral
+    purescriptModuleName = { fg = colors.definition }, -- Functions (blue)
+    purescriptWhere = { fg = colors.fg1 },             -- Neutral
+    purescriptDelimiter = { fg = colors.punctuation }, -- Punctuation
+    purescriptType = { fg = colors.fg1 },              -- Neutral
+    purescriptImportKeyword = { fg = colors.fg1 },     -- Neutral
+    purescriptHidingKeyword = { fg = colors.fg1 },     -- Neutral
+    purescriptAsKeyword = { fg = colors.fg1 },         -- Neutral
+    purescriptStructure = { fg = colors.fg1 },         -- Neutral
+    purescriptOperator = { fg = colors.punctuation },  -- Punctuation
+    purescriptTypeVar = { fg = colors.fg1 },           -- Neutral
+    purescriptConstructor = { fg = colors.fg1 },       -- Neutral
+    purescriptFunction = { fg = colors.definition },   -- Functions (blue)
+    purescriptConditional = { fg = colors.fg1 },       -- Neutral
+    purescriptBacktick = { fg = colors.punctuation },  -- Punctuation
+
+    -- CoffeeScript
+    coffeeExtendedOp = { fg = colors.punctuation },           -- Punctuation
+    coffeeSpecialOp = { fg = colors.punctuation },            -- Punctuation
+    coffeeCurly = { fg = colors.punctuation },                -- Punctuation
+    coffeeParen = { fg = colors.punctuation },                -- Punctuation
+    coffeeBracket = { fg = colors.punctuation },              -- Punctuation
+    -- Ruby
+    rubyStringDelimiter = { fg = colors.string },             -- Strings (green)
+    rubyInterpolationDelimiter = { fg = colors.punctuation }, -- Punctuation
+    rubyDefinedOperator = { fg = colors.fg1 },                -- Neutral
+
+    -- Objective-C
+    objcTypeModifier = { fg = colors.fg1 }, -- Neutral
+    objcDirective = { fg = colors.fg1 },    -- Neutral
+
+    -- Go
+    goDirective = { fg = colors.fg1 },          -- Neutral
+    goConstants = { fg = colors.constant },     -- Constants (purple)
+    goDeclaration = { fg = colors.definition }, -- Functions (blue)
+    goDeclType = { fg = colors.fg1 },           -- Neutral
+    goBuiltins = { fg = colors.definition },    -- Functions (blue)
+
+    -- Lua
+    luaIn = { fg = colors.fg1 },              -- Neutral
+    luaFunction = { fg = colors.definition }, -- Functions (blue)
+    luaTable = { fg = colors.fg1 },           -- Neutral
+
+    -- MoonScript
+    moonSpecialOp = { fg = colors.punctuation },  -- Punctuation
+    moonExtendedOp = { fg = colors.punctuation }, -- Punctuation
+    moonFunction = { fg = colors.definition },    -- Functions (blue)
+    moonObject = { fg = colors.fg1 },             -- Neutral
+
+    -- Java
+    javaAnnotation = { fg = colors.fg1 }, -- Neutral
+    javaDocTags = { link = "Comment" },
+    javaCommentTitle = { link = "Comment" },
+    javaParen = { fg = colors.punctuation },    -- Punctuation
+    javaParen1 = { fg = colors.punctuation },   -- Punctuation
+    javaParen2 = { fg = colors.punctuation },   -- Punctuation
+    javaParen3 = { fg = colors.punctuation },   -- Punctuation
+    javaParen4 = { fg = colors.punctuation },   -- Punctuation
+    javaParen5 = { fg = colors.punctuation },   -- Punctuation
+    javaOperator = { fg = colors.punctuation }, -- Punctuation
+    javaVarArg = { fg = colors.fg1 },           -- Neutral
+
+    -- Elixir
+    elixirDocString = { link = "Comment" },
+    elixirStringDelimiter = { fg = colors.string },             -- Strings (green)
+    elixirInterpolationDelimiter = { fg = colors.punctuation }, -- Punctuation
+    elixirModuleDeclaration = { fg = colors.definition },       -- Functions (blue)
+
+    -- Scala
+    scalaNameDefinition = { fg = colors.definition },   -- Functions (blue)
+    scalaCaseFollowing = { fg = colors.fg1 },           -- Neutral
+    scalaCapitalWord = { fg = colors.definition },      -- Functions (blue)
+    scalaTypeExtension = { fg = colors.fg1 },           -- Neutral
+    scalaKeyword = { fg = colors.fg1 },                 -- Neutral
+    scalaKeywordModifier = { fg = colors.fg1 },         -- Neutral
+    scalaSpecial = { fg = colors.constant },            -- Constants (purple)
+    scalaOperator = { fg = colors.punctuation },        -- Punctuation
+    scalaTypeDeclaration = { fg = colors.fg1 },         -- Neutral
+    scalaTypeTypePostDeclaration = { fg = colors.fg1 }, -- Neutral
+    scalaInstanceDeclaration = { fg = colors.fg1 },     -- Neutral
+    scalaInterpolation = { fg = colors.punctuation },   -- Punctuation
+
+    -- Haskell
+    haskellType = { fg = colors.fg1 },              -- Neutral
+    haskellIdentifier = { fg = colors.definition }, -- Functions (blue)
+    haskellSeparator = { fg = colors.punctuation }, -- Punctuation
+    haskellDelimiter = { fg = colors.punctuation }, -- Punctuation
+    haskellOperators = { fg = colors.punctuation }, -- Punctuation
+    haskellBacktick = { fg = colors.punctuation },  -- Punctuation
+    haskellStatement = { fg = colors.fg1 },         -- Neutral
+    haskellConditional = { fg = colors.fg1 },       -- Neutral
+    haskellLet = { fg = colors.fg1 },               -- Neutral
+    haskellDefault = { fg = colors.fg1 },           -- Neutral
+    haskellWhere = { fg = colors.fg1 },             -- Neutral
+    haskellBottom = { fg = colors.fg1 },            -- Neutral
+    haskellImportKeywords = { fg = colors.fg1 },    -- Neutral
+    haskellDeclKeyword = { fg = colors.fg1 },       -- Neutral
+    haskellDecl = { fg = colors.definition },       -- Functions (blue)
+    haskellDeriving = { fg = colors.fg1 },          -- Neutral
+    haskellAssocType = { fg = colors.fg1 },         -- Neutral
+    haskellNumber = { fg = colors.constant },       -- Constants (purple)
+    haskellPragma = { fg = colors.constant },       -- Constants (purple)
+    haskellTH = { fg = colors.definition },         -- Functions (blue)
+    haskellForeignKeywords = { fg = colors.fg1 },   -- Neutral
+    haskellKeyword = { fg = colors.fg1 },           -- Neutral
+    haskellFloat = { fg = colors.constant },        -- Constants (purple)
+    haskellInfix = { fg = colors.punctuation },     -- Punctuation
+    haskellQuote = { fg = colors.string },          -- Strings (green)
+    haskellShebang = { fg = colors.comment },       -- Comments
+    haskellLiquid = { fg = colors.constant },       -- Constants (purple)
+    haskellQuasiQuoted = { fg = colors.string },    -- Strings (green)
+    haskellRecursiveDo = { fg = colors.fg1 },       -- Neutral
+    haskellQuotedType = { fg = colors.fg1 },        -- Neutral
+    haskellPreProc = { fg = colors.fg1 },           -- Neutral
+    haskellTypeRoles = { fg = colors.fg1 },         -- Neutral
+    haskellTypeForall = { fg = colors.fg1 },        -- Neutral
+    haskellPatternKeyword = { fg = colors.fg1 },    -- Neutral
+
+    -- JSON
+    jsonKeyword = { fg = colors.string },     -- Strings (green) - keys are like strings
+    jsonQuote = { fg = colors.string },       -- Strings (green)
+    jsonBraces = { fg = colors.punctuation }, -- Punctuation
+    jsonString = { fg = colors.string },      -- Strings (green)
+
+    -- C#
+    csBraces = { fg = colors.punctuation },                 -- Punctuation
+    csEndColon = { fg = colors.punctuation },               -- Punctuation
+    csLogicSymbols = { fg = colors.punctuation },           -- Punctuation
+    csParens = { fg = colors.punctuation },                 -- Punctuation
+    csOpSymbols = { fg = colors.punctuation },              -- Punctuation
+    csInterpolationDelimiter = { fg = colors.punctuation }, -- Punctuation
+    csInterpolationAlignDel = { fg = colors.punctuation },  -- Punctuation
+    csInterpolationFormat = { fg = colors.string },         -- Strings (green)
+    csInterpolationFormatDel = { fg = colors.punctuation }, -- Punctuation
+
+    -- Rust
+    rustSigil = { fg = colors.punctuation },         -- Punctuation
+    rustEscape = { fg = colors.constant },           -- Constants (purple)
+    rustStringContinuation = { fg = colors.string }, -- Strings (green)
+    rustEnum = { fg = colors.fg1 },                  -- Neutral
+    rustStructure = { fg = colors.fg1 },             -- Neutral
+    rustModPathSep = { fg = colors.punctuation },    -- Punctuation
+    rustCommentLineDoc = { link = "Comment" },
+    rustDefault = { fg = colors.fg1 },               -- Neutral
+
+    -- OCaml
+    ocamlOperator = { fg = colors.punctuation }, -- Punctuation
+    ocamlKeyChar = { fg = colors.punctuation },  -- Punctuation
+    ocamlArrow = { fg = colors.punctuation },    -- Punctuation
+    ocamlInfixOpKeyword = { fg = colors.fg1 },   -- Neutral
+    ocamlConstructor = { fg = colors.fg1 },      -- Neutral
+
+    -- HTML/XML
+    htmlTag = { fg = colors.punctuation },                           -- Punctuation
+    htmlEndTag = { fg = colors.punctuation },                        -- Punctuation
+    htmlTagName = { fg = colors.definition },                        -- Functions (blue)
+    htmlArg = { fg = colors.string },                                -- Strings (green) - attributes are like strings
+    htmlTagN = { fg = colors.definition },                           -- Functions (blue)
+    htmlSpecialTagName = { fg = colors.definition },                 -- Functions (blue)
+    htmlLink = { fg = colors.string, underline = config.underline }, -- Strings (green)
+    htmlSpecialChar = { fg = colors.constant },                      -- Constants (purple)
+
+    xmlTag = { fg = colors.punctuation },                            -- Punctuation
+    xmlEndTag = { fg = colors.punctuation },                         -- Punctuation
+    xmlTagName = { fg = colors.definition },                         -- Functions (blue)
+    xmlEqual = { fg = colors.punctuation },                          -- Punctuation
+    docbkKeyword = { fg = colors.definition },                       -- Functions (blue)
+    xmlDocTypeDecl = { fg = colors.comment },                        -- Comments
+    xmlDocTypeKeyword = { fg = colors.constant },                    -- Constants (purple)
+    xmlCdataStart = { fg = colors.comment },                         -- Comments
+    xmlCdataCdata = { fg = colors.constant },                        -- Constants (purple)
+    dtdFunction = { fg = colors.comment },                           -- Comments
+    dtdTagName = { fg = colors.constant },                           -- Constants (purple)
+    xmlAttrib = { fg = colors.string },                              -- Strings (green)
+    xmlProcessingDelim = { fg = colors.comment },                    -- Comments
+    dtdParamEntityPunct = { fg = colors.comment },                   -- Comments
+    dtdParamEntityDPunct = { fg = colors.comment },                  -- Comments
+    xmlAttribPunct = { fg = colors.comment },                        -- Comments
+    xmlEntity = { fg = colors.constant },                            -- Constants (purple)
+    xmlEntityPunct = { fg = colors.constant },                       -- Constants (purple)
     -- Tree-sitter groups (map to Alabaster's 4 categories)
     ["@comment"] = { link = "Comment" },
     ["@string"] = { link = "String" },
