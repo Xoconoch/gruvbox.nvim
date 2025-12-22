@@ -543,6 +543,34 @@ local function get_groups()
     purescriptConditional            = { fg = colors.fg1 },         -- Neutral
     purescriptBacktick               = { fg = colors.punctuation }, -- Punctuation
 
+    -- Typst (Vim syntax highlight groups)
+    typstCommentBlock                = { fg = colors.comment },
+    typstCommentLine                 = { fg = colors.comment },
+    typstCommentTodo                 = { fg = colors.comment },
+
+    typstCodeConditional             = { fg = colors.fg1 },
+    typstCodeRepeat                  = { fg = colors.fg1 },
+    typstCodeKeyword                 = { fg = colors.fg1 },
+    typstCodeStatementWord           = { fg = colors.fg1 },
+
+    typstCodeIdentifier              = { fg = colors.fg1 },
+    typstCodeFunction                = { fg = colors.definition },
+    typstCodeConstant                = { fg = colors.constant },
+    typstCodeNumberInteger           = { fg = colors.constant },
+    typstCodeNumberFloat             = { fg = colors.constant },
+    typstCodeNumberLength            = { fg = colors.constant },
+    typstCodeNumberAngle             = { fg = colors.constant },
+    typstCodeNumberRatio             = { fg = colors.constant },
+    typstCodeNumberFraction          = { fg = colors.constant },
+    typstCodeString                  = { fg = colors.string },
+    typstCodeLabel                   = { fg = colors.fg1 },
+    typstCodeFieldAccess             = { fg = colors.fg1 },
+
+    typstCodeParen                   = { fg = colors.punctuation },
+    typstCodeBrace                   = { fg = colors.punctuation },
+    typstCodeBracket                 = { fg = colors.punctuation },
+    typstCodeDollar                  = { fg = colors.punctuation },
+
     -- Nix (Treesitter & Vim syntax neutral/minimal)
     nixIdentifier                    = { fg = colors.fg1 },         -- Neutral identifiers
     nixPath                          = { fg = colors.constant },    -- Constants (paths, attr names)
