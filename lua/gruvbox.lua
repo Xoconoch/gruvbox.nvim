@@ -605,7 +605,7 @@ local function get_groups()
     nixArgumentDefinition            = { fg = colors.fg1 },         -- function arg
     nixArgumentEllipsis              = { fg = colors.punctuation }, -- ...
     nixArgOperator                   = { fg = colors.punctuation }, -- @ operator in function args
-    nixFunctionArgument              = { fg = colors.fg1 },         -- { foo, bar } in functions
+    nixFunctionArgument              = { fg = colors.punctuation }, -- { foo, bar } in functions
     nixSimpleFunctionArgument        = { fg = colors.fg1 },         -- single arg shorthand
     nixList                          = { fg = colors.punctuation }, -- [ … ]
     nixLetExprKeyword                = { fg = colors.fg1 },         -- let
