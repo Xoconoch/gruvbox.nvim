@@ -491,7 +491,7 @@ local function get_groups()
     nixComment                       = { fg = colors.comment },     -- Comments
     nixString                        = { fg = colors.string },      -- Strings
     nixNumber                        = { fg = colors.constant },    -- Constants (numbers)
-    nixAttrName                      = { fg = colors.constant },    -- Attribute names (treated as constants)
+    nixAttribute                     = { fg = colors.fg1 },         -- Attribute names (treated as constants)
     nixInterpolation                 = { fg = colors.punctuation }, -- Punctuation in strings `${…}`
     nixBraces                        = { fg = colors.punctuation }, -- `{ }`
     nixParens                        = { fg = colors.punctuation }, -- `( )`
@@ -502,7 +502,7 @@ local function get_groups()
     nixLambda                        = { fg = colors.fg1 },         -- Neutral for anonymous function arrow
     nixUri                           = { fg = colors.string },      -- URIs treated like strings
     nixAttributeSet                  = { fg = colors.punctuation }, -- braces
-    nixAttributeDefinition           = { fg = colors.fg1 },         -- attribute name
+    nixAttributeDefinition           = { fg = colors.punctuation }, -- attribute name
     nixAttributeAssignment           = { fg = colors.punctuation }, -- "=" neutral
 
     -- CoffeeScript
