@@ -643,6 +643,35 @@ local function get_groups()
     xmlAttribPunct = { fg = colors.comment },                        -- Comments
     xmlEntity = { fg = colors.constant },                            -- Constants (purple)
     xmlEntityPunct = { fg = colors.constant },                       -- Constants (purple)
+    -- Svelte
+    svelteTag = { fg = colors.definition },                          -- Blue for component tags (like functions)
+    svelteComponentName = { fg = colors.definition },                -- Blue for component names
+    svelteDirective = { fg = colors.string },                        -- Green for directives (bind:, on:, class:, etc.)
+    svelteSpecialDirective = { fg = colors.constant },               -- Purple for special directives ({#if}, {#each}, etc.)
+    svelteInterpolation = { fg = colors.constant },                  -- Purple for {expression} interpolation
+    svelteMustacheBraces = { fg = colors.punctuation },              -- Subtle for {} braces
+    svelteShorthandAttribute = { fg = colors.string },               -- Green for shorthand attributes
+    svelteKeyword = { fg = colors.fg1 },                             -- Neutral for Svelte keywords
+
+    -- Svelte script/style tags (inherit from HTML/JS/CSS)
+    svelteScriptTag = { link = "htmlTag" },
+    svelteStyleTag = { link = "htmlTag" },
+    svelteScriptTagName = { link = "htmlTagName" },
+    svelteStyleTagName = { link = "htmlTagName" },
+
+    -- Svelte attribute rules
+    svelteAttribute = { fg = colors.string },    -- Green for regular attributes
+    svelteEventHandler = { fg = colors.string }, -- Green for on:event handlers
+
+    -- Svelte special syntax
+    svelteSpecialExpression = { fg = colors.constant },          -- Purple for {#if}, {#each}, {#await}, etc.
+    svelteSpecialExpressionKeyword = { fg = colors.fg1 },        -- Neutral for if, each, await keywords
+    svelteSpecialExpressionBraces = { fg = colors.punctuation }, -- Subtle for special expression braces
+
+    -- Svelte reactivity
+    svelteReactiveStatement = { fg = colors.constant }, -- Purple for $: statements
+    svelteStoreSubscript = { fg = colors.constant },    -- Purple for $store
+    svelteReactiveLabel = { fg = colors.punctuation },  -- Subtle for $: label
     -- Tree-sitter groups (map to Alabaster's 4 categories)
     ["@comment"] = { link = "Comment" },
     ["@string"] = { link = "String" },
@@ -707,6 +736,18 @@ local function get_groups()
     ["@punctuation"] = { fg = colors.punctuation },
     ["@macro"] = { fg = colors.fg1 },
     ["@structure"] = { fg = colors.fg1 },
+    -- More granular Svelte highlighting (if your syntax highlighter supports it)
+    ["@svelte.tag"] = { fg = colors.definition },             -- Blue for component tags
+    ["@svelte.component"] = { fg = colors.definition },       -- Blue for component names
+    ["@svelte.directive"] = { fg = colors.string },           -- Green for directives
+    ["@svelte.directive.special"] = { fg = colors.constant }, -- Purple for {#if}, {#each}, etc.
+    ["@svelte.expression"] = { fg = colors.constant },        -- Purple for {expression}
+    ["@svelte.braces"] = { fg = colors.punctuation },         -- Subtle for braces
+    ["@svelte.attribute"] = { fg = colors.string },           -- Green for attributes
+    ["@svelte.event"] = { fg = colors.string },               -- Green for event handlers
+    ["@svelte.reactive"] = { fg = colors.constant },          -- Purple for $: and $store
+    ["@svelte.script"] = { link = "javascript" },             -- Inherit from JavaScript
+    ["@svelte.style"] = { link = "css" },                     -- Inherit from CSS
   }
 
   -- Apply any user overrides
