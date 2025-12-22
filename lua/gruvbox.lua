@@ -328,6 +328,9 @@ local function get_groups()
     Function                         = { fg = colors.definition },
     Identifier                       = { fg = colors.fg1 },
 
+    -- 5. Punctuation
+    Punctuation                      = { fg = colors.punctuation },
+
     -- Neutralize all language keywords (if, else, function, etc.)
     Statement                        = { fg = colors.fg1 },
     Conditional                      = { fg = colors.fg1 },
@@ -571,28 +574,46 @@ local function get_groups()
     typstCodeBracket                 = { fg = colors.punctuation },
     typstCodeDollar                  = { fg = colors.punctuation },
 
-    -- Nix (Treesitter & Vim syntax neutral/minimal)
-    nixIdentifier                    = { fg = colors.fg1 },         -- Neutral identifiers
-    nixPath                          = { fg = colors.constant },    -- Constants (paths, attr names)
-    nixOperator                      = { fg = colors.fg1 },         -- Neutral operators (e.g., +, //)
-    nixKeyword                       = { fg = colors.fg1 },         -- Neutral keywords (let, in, if, then, else)
-    nixComment                       = { fg = colors.comment },     -- Comments
-    nixString                        = { fg = colors.string },      -- Strings
-    nixNumber                        = { fg = colors.constant },    -- Constants (numbers)
-    nixAttribute                     = { fg = colors.fg1 },         -- Attribute names (treated as constants)
-    nixInterpolation                 = { fg = colors.punctuation }, -- Punctuation in strings `${…}`
-    nixBraces                        = { fg = colors.punctuation }, -- `{ }`
-    nixParens                        = { fg = colors.punctuation }, -- `( )`
-    nixBrackets                      = { fg = colors.punctuation }, -- `[ ]`
-    nixEquals                        = { fg = colors.punctuation }, -- `=`
-    nixSemicolon                     = { fg = colors.punctuation }, -- `;`
-    nixArrow                         = { fg = colors.punctuation }, -- `->`
-    nixLambda                        = { fg = colors.fg1 },         -- Neutral for anonymous function arrow
-    nixUri                           = { fg = colors.string },      -- URIs treated like strings
-    nixAttributeSet                  = { fg = colors.punctuation }, -- braces
-    nixAttributeDefinition           = { fg = colors.punctuation }, -- attribute name
-    nixAttributeAssignment           = { fg = colors.punctuation }, -- "=" neutral
-    nixFunctionArgument              = { fg = colors.punctuation }, -- { pkgs, ... } stuff
+    -- Nix highlights
+    nixBoolean                       = { fg = colors.constant },    -- true, false
+    nixNull                          = { fg = colors.constant },    -- null
+    nixRecKeyword                    = { fg = colors.fg1 },         -- rec
+    nixOperator                      = { fg = colors.fg1 },         -- operators: +, //, etc.
+    nixParen                         = { fg = colors.punctuation }, -- ( )
+    nixInteger                       = { fg = colors.constant },    -- numbers
+    nixComment                       = { fg = colors.comment },     -- # comment, /* comment */
+    nixTodo                          = { fg = colors.special },     -- TODO, FIXME, etc.
+    nixInterpolation                 = { fg = colors.punctuation }, -- ${…} (delimiter)
+    nixInterpolationParam            = { fg = colors.fg1 },         -- variable inside ${…}
+    nixSimpleString                  = { fg = colors.string },      -- "string"
+    nixString                        = { fg = colors.string },      -- ''string''
+    nixSimpleStringSpecial           = { fg = colors.special },     -- \n, \t, \$ etc.
+    nixStringSpecial                 = { fg = colors.special },     -- ''$'' or ''\n''
+    nixInvalidSimpleStringEscape     = { fg = colors.error },       -- invalid escape
+    nixInvalidStringEscape           = { fg = colors.error },       -- invalid escape
+    nixFunctionCall                  = { fg = colors.fg1 },         -- function call
+    nixPath                          = { fg = colors.constant },    -- /path/to/file
+    nixHomePath                      = { fg = colors.constant },    -- ~/path
+    nixSearchPathRef                 = { fg = colors.constant },    -- <…>
+    nixURI                           = { fg = colors.string },      -- URLs
+    nixAttribute                     = { fg = colors.fg1 },         -- attribute name
+    nixAttributeDot                  = { fg = colors.punctuation }, -- .
+    nixAttributeAssignment           = { fg = colors.punctuation }, -- =
+    nixAttributeDefinition           = { fg = colors.fg1 },         -- attr def
+    nixAttributeSet                  = { fg = colors.punctuation }, -- { … }
+    nixArgumentDefinitionWithDefault = { fg = colors.fg1 },         -- function arg with default
+    nixArgumentDefinition            = { fg = colors.fg1 },         -- function arg
+    nixArgumentEllipsis              = { fg = colors.punctuation }, -- ...
+    nixArgOperator                   = { fg = colors.punctuation }, -- @ operator in function args
+    nixFunctionArgument              = { fg = colors.fg1 },         -- { foo, bar } in functions
+    nixSimpleFunctionArgument        = { fg = colors.fg1 },         -- single arg shorthand
+    nixList                          = { fg = colors.punctuation }, -- [ … ]
+    nixLetExprKeyword                = { fg = colors.fg1 },         -- let
+    nixIfExprKeyword                 = { fg = colors.fg1 },         -- if / then / else
+    nixWithExprKeyword               = { fg = colors.fg1 },         -- with
+    nixAssertKeyword                 = { fg = colors.fg1 },         -- assert
+    nixBuiltin                       = { fg = colors.special },     -- builtins
+    nixNamespacedBuiltin             = { fg = colors.special },     -- builtins.foo
 
     -- CoffeeScript
     coffeeExtendedOp                 = { fg = colors.punctuation }, -- Punctuation
@@ -809,7 +830,9 @@ local function get_groups()
     ["@function.macro"]              = { link = "Function" },
     ["@method"]                      = { link = "Function" },
     ["@method.call"]                 = { link = "Function" },
-    ["@constructor"]                 = { fg = colors.punctuation },
+    ["@constructor"]                 = { link = "Punctuation" },
+    ["@lsp.type.punct"]              = { link = "Punctuation" },
+    ["@lsp.type.punctuation"]        = { link = "Punctuation" },
 
     -- Neutralize all other tree-sitter groups
     ["@keyword"]                     = { fg = colors.fg1 },
