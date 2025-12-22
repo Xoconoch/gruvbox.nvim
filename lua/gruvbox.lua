@@ -157,10 +157,12 @@ local function get_colors()
       string = p.bright_green,
       -- 2. Constants → Gruvbox purple
       constant = p.bright_purple,
-      -- 3. Comments → Gruvbox gray
-      comment = p.gray,
+      -- 3. Comments → Gruvbox neutral_orange (as you have it)
+      comment = p.neutral_orange,
       -- 4. Global definitions → Gruvbox blue
       definition = p.bright_blue,
+      -- 5. Punctuation → use dark3 for subtle punctuation in dark mode
+      punctuation = p.dark3,
 
       -- Everything else uses normal text color (light1)
       red = p.light1,
@@ -198,10 +200,12 @@ local function get_colors()
       string = p.faded_green,
       -- 2. Constants → faded purple
       constant = p.faded_purple,
-      -- 3. Comments → gray
-      comment = p.gray,
+      -- 3. Comments → gray (as you have it)
+      comment = p.faded_orange,
       -- 4. Global definitions → faded blue
       definition = p.faded_blue,
+      -- 5. Punctuation → use light3 for subtle punctuation in light mode
+      punctuation = p.light3,
 
       -- Everything else uses normal text color (dark1)
       red = p.dark1,
@@ -297,8 +301,8 @@ local function get_groups()
     Typedef = { fg = colors.fg1 },
     Special = { fg = colors.fg1 },
     Tag = { fg = colors.fg1 },
-    Delimiter = { fg = colors.fg1 },
-    SpecialChar = { fg = colors.fg1 },
+    Delimiter = { fg = colors.punctuation },   -- (), [], {}, ,, ;, ., :
+    SpecialChar = { fg = colors.punctuation }, -- Special characters like \n, \t, etc.
 
     -- UI elements (keep Gruvbox's but simpler)
     CursorLine = { bg = colors.bg1 },
@@ -370,7 +374,7 @@ local function get_groups()
     ["@function.macro"] = { link = "Function" },
     ["@method"] = { link = "Function" },
     ["@method.call"] = { link = "Function" },
-    ["@constructor"] = { fg = colors.definition },
+    ["@constructor"] = { fg = colors.fg1 },
 
     -- Neutralize all other tree-sitter groups
     ["@keyword"] = { fg = colors.fg1 },
