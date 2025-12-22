@@ -330,13 +330,13 @@ local function get_groups()
 
     -- 5. Punctuation
     Punctuation                      = { fg = colors.punctuation },
+    Operator                         = { link = "Punctuation" },
 
     -- Neutralize all language keywords (if, else, function, etc.)
     Statement                        = { fg = colors.fg1 },
     Conditional                      = { fg = colors.fg1 },
     Repeat                           = { fg = colors.fg1 },
     Label                            = { fg = colors.fg1 },
-    Operator                         = { fg = colors.fg1 },
     Keyword                          = { fg = colors.fg1 },
     Exception                        = { fg = colors.fg1 },
     PreProc                          = { fg = colors.fg1 },
