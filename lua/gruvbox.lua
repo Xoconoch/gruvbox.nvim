@@ -809,6 +809,65 @@ local function get_groups()
     svelteReactiveStatement          = { fg = colors.constant },    -- Purple for $: statements
     svelteStoreSubscript             = { fg = colors.constant },    -- Purple for $store
     svelteReactiveLabel              = { fg = colors.punctuation }, -- Subtle for $: label
+
+    -- =========================
+    -- Markdown
+    -- =========================
+
+    -- Headings
+    markdownH1                       = { fg = colors.definition },
+    markdownH2                       = { fg = colors.definition },
+    markdownH3                       = { fg = colors.definition },
+    markdownH4                       = { fg = colors.definition },
+    markdownH5                       = { fg = colors.definition },
+    markdownH6                       = { fg = colors.definition },
+
+    markdownH1Delimiter              = { fg = colors.punctuation },
+    markdownH2Delimiter              = { fg = colors.punctuation },
+    markdownH3Delimiter              = { fg = colors.punctuation },
+    markdownH4Delimiter              = { fg = colors.punctuation },
+    markdownH5Delimiter              = { fg = colors.punctuation },
+    markdownH6Delimiter              = { fg = colors.punctuation },
+    markdownHeadingDelimiter         = { fg = colors.punctuation },
+    markdownHeadingRule              = { fg = colors.punctuation },
+
+    -- Text emphasis (neutralized)
+    markdownItalic                   = { fg = colors.fg1, italic = true },
+    markdownBold                     = { fg = colors.fg1, bold = true },
+    markdownBoldItalic               = { fg = colors.fg1, bold = true, italic = true },
+    markdownStrike                   = { fg = colors.fg1, strikethrough = true },
+
+    markdownItalicDelimiter          = { fg = colors.punctuation },
+    markdownBoldDelimiter            = { fg = colors.punctuation },
+    markdownBoldItalicDelimiter      = { fg = colors.punctuation },
+    markdownStrikeDelimiter          = { fg = colors.punctuation },
+    markdownBlockquote               = { fg = colors.comment },
+    markdownRule                     = { fg = colors.punctuation },
+    markdownListMarker               = { fg = colors.punctuation },
+    markdownOrderedListMarker        = { fg = colors.punctuation },
+    markdownCode                     = { fg = colors.constant, bg = colors.bg1 },
+    markdownCodeDelimiter            = { fg = colors.punctuation },
+    markdownCodeBlock                = { fg = colors.constant, bg = colors.bg1 },
+    markdownHighlight                = { fg = colors.constant, bg = colors.bg1 },
+    markdownLinkText                 = { fg = colors.string },
+    markdownLinkTextDelimiter        = { fg = colors.punctuation },
+    markdownLinkDelimiter            = { fg = colors.punctuation },
+    markdownUrl                      = { fg = colors.string, underline = config.underline },
+    markdownUrlDelimiter             = { fg = colors.punctuation },
+    markdownUrlTitle                 = { fg = colors.string },
+    markdownUrlTitleDelimiter        = { fg = colors.punctuation },
+    markdownAutomaticLink            = { fg = colors.string },
+    markdownIdDeclaration            = { fg = colors.constant },
+    markdownId                       = { fg = colors.constant },
+    markdownIdDelimiter              = { fg = colors.punctuation },
+    markdownFootnote                 = { fg = colors.constant },
+    markdownFootnoteDefinition       = { fg = colors.constant },
+    markdownLineBreak                = { fg = colors.punctuation },
+    markdownEscape                   = { fg = colors.constant },
+    markdownError                    = { fg = colors.red },
+    markdownYamlHead                 = { fg = colors.comment },
+    markdownValid                    = { fg = colors.fg1 },
+
     -- Tree-sitter groups (map to Alabaster's 4 categories)
     ["@comment"]                     = { link = "Comment" },
     ["@string"]                      = { link = "String" },
