@@ -419,8 +419,10 @@ local function get_groups()
     GitSignsAdd                      = { link = "GruvboxGreen" },
     GitSignsAddLn                    = { link = "GruvboxGreen" },
     GitSignsAddNr                    = { link = "GruvboxGreen" },
+    GitSignsChange                   = { link = "GruvboxOrange" },
     GitSignsChangeLn                 = { link = "GruvboxOrange" },
     GitSignsChangeNr                 = { link = "GruvboxOrange" },
+    GitSignsDelete                   = { link = "GruvboxRed" },
     GitSignsDeleteLn                 = { link = "GruvboxRed" },
     GitSignsDeleteNr                 = { link = "GruvboxRed" },
 
