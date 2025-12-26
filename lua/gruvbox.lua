@@ -417,8 +417,12 @@ local function get_groups()
 
     -- Git (Gruvbox colors)
     GitSignsAdd                      = { link = "GruvboxGreen" },
-    GitSignsChange                   = { link = "GruvboxOrange" },
-    GitSignsDelete                   = { link = "GruvboxRed" },
+    GitSignsAddLn                    = { link = "GruvboxGreen" },
+    GitSignsAddNr                    = { link = "GruvboxGreen" },
+    GitSignsChangeLn                 = { link = "GruvboxOrange" },
+    GitSignsChangeNr                 = { link = "GruvboxOrange" },
+    GitSignsDeleteLn                 = { link = "GruvboxRed" },
+    GitSignsDeleteNr                 = { link = "GruvboxRed" },
 
     -- Clojure
     clojureKeyword                   = { fg = colors.constant },   -- Constants (purple)
